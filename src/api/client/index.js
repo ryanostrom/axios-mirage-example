@@ -24,12 +24,12 @@ export class Client {
   }
 
   configure() {
-    const accessToken = window.sessionStorage.getItem('access-token')
+    const accessToken = window.localStorage.getItem('access-token')
     if (accessToken) {
       this.setAccessToken(accessToken)
     }
 
-    const refreshToken = window.sessionStorage.getItem('refresh-token')
+    const refreshToken = window.localStorage.getItem('refresh-token')
     if (refreshToken) {
       this.setRefreshToken(refreshToken)
     }
@@ -49,12 +49,12 @@ export class Client {
 
   setAccessToken = (token) => {
     this.accessToken = token
-    window.sessionStorage.setItem('access-token', token)
+    window.localStorage.setItem('access-token', token)
   }
 
   setRefreshToken = (token) => {
     this.token = token
-    window.sessionStorage.setItem('refresh-token', token)
+    window.localStorage.setItem('refresh-token', token)
   }
 
   setRefreshHandler = (handler) => {
